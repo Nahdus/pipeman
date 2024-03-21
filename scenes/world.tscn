@@ -1,0 +1,1220 @@
+[gd_scene load_steps=88 format=2]
+
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/pipe_sprites.png" type="Texture" id=2]
+[ext_resource path="res://scenes/slime.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/world.gd" type="Script" id=4]
+[ext_resource path="res://scripts/world/stateNameDisplay.gd" type="Script" id=5]
+[ext_resource path="res://assets/tank.png" type="Texture" id=6]
+[ext_resource path="res://assets/waterBubble0.png" type="Texture" id=7]
+[ext_resource path="res://assets/waterBubble.png" type="Texture" id=8]
+[ext_resource path="res://assets/waterBubble2.png" type="Texture" id=9]
+[ext_resource path="res://assets/waterBubble3.png" type="Texture" id=10]
+[ext_resource path="res://assets/waterBubble4.png" type="Texture" id=11]
+[ext_resource path="res://assets/waterBubble5.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprite.png" type="Texture" id=13]
+[ext_resource path="res://scripts/tests/JumperBody.gd" type="Script" id=14]
+[ext_resource path="res://scripts/tests/jumpHeight.gd" type="Script" id=15]
+[ext_resource path="res://scripts/tests/leaperBody.gd" type="Script" id=16]
+[ext_resource path="res://assets/pipemanAnimatedt.png" type="Texture" id=17]
+[ext_resource path="res://scripts/tests/jumpDistance.gd" type="Script" id=18]
+[ext_resource path="res://scripts/tests/halfLeaperBody.gd" type="Script" id=19]
+[ext_resource path="res://scripts/tests/HalfjumpDistance.gd" type="Script" id=20]
+[ext_resource path="res://scripts/tests/halfJumperBody.gd" type="Script" id=21]
+[ext_resource path="res://scripts/tests/halfJumpHeight.gd" type="Script" id=22]
+[ext_resource path="res://scenes/halfLeaper.tscn" type="PackedScene" id=23]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 15.875, 16, 13, 15.5078, 10.4375, 14.1953, 8.5625, 12.5078, 7.625, 10.8203, 6.875, 8.50781, 7.75, 5.13281, 9.4375, 2.57031, 12, 0.695313, 16, 0, 16, 0, 16, 0, 16, 0, 16, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0.1875, 0.015625, 0.125, 0, 3.6875, 0.265625, 5.9375, 1.14063, 7.875, 3.14063, 9, 4.39063, 9.3125, 5.39063, 9.875, 6.14063, 9.875, 9.39063, 9.125, 11.2656, 7.6875, 12.8906, 5.625, 14.8281, 3.875, 15.6406, 0, 15.9531 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=67]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="TileSet" id=23]
+0/name = "pipe_sprites.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 32, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "pipe_sprites.png 1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 32, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 1 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "pipe_sprites.png 2"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 80, 32, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 12 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "pipe_sprites.png 3"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 16, 32, 16, 16 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 16 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "pipe_sprites.png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 32, 32, 16, 16 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 17 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "pipe_sprites.png 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 48, 32, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 18 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "pipe_sprites.png 6"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 64, 32, 16, 16 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 19 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "pipe_sprites.png 7"
+7/texture = ExtResource( 2 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 16, 64, 16, 16 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 20 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 20 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "pipe_sprites.png 8"
+8/texture = ExtResource( 2 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 32, 64, 16, 16 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 21 )
+8/shape_one_way = false
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 21 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "pipe_sprites.png 9"
+9/texture = ExtResource( 2 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 48, 64, 16, 16 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 22 )
+9/shape_one_way = false
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 22 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
+10/name = "pipe_sprites.png 10"
+10/texture = ExtResource( 2 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 64, 64, 16, 16 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 2 )
+10/shape_one_way = false
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+10/z_index = 0
+11/name = "pipe_sprites.png 11"
+11/texture = ExtResource( 2 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 80, 64, 16, 16 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape = SubResource( 3 )
+11/shape_one_way = false
+11/shape_one_way_margin = 1.0
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+11/z_index = 0
+12/name = "pipe_sprites.png 12"
+12/texture = ExtResource( 2 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 96, 64, 16, 16 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape = SubResource( 4 )
+12/shape_one_way = false
+12/shape_one_way_margin = 1.0
+12/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+12/z_index = 0
+13/name = "pipe_sprites.png 13"
+13/texture = ExtResource( 2 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 112, 64, 16, 16 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape = SubResource( 5 )
+13/shape_one_way = false
+13/shape_one_way_margin = 1.0
+13/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+13/z_index = 0
+14/name = "pipe_sprites.png 14"
+14/texture = ExtResource( 2 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 128, 64, 16, 16 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape = SubResource( 6 )
+14/shape_one_way = false
+14/shape_one_way_margin = 1.0
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+14/z_index = 0
+15/name = "pipe_sprites.png 15"
+15/texture = ExtResource( 2 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 16, 80, 16, 16 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape = SubResource( 7 )
+15/shape_one_way = false
+15/shape_one_way_margin = 1.0
+15/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+15/z_index = 0
+16/name = "pipe_sprites.png 16"
+16/texture = ExtResource( 2 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 32, 80, 16, 16 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape = SubResource( 8 )
+16/shape_one_way = false
+16/shape_one_way_margin = 1.0
+16/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+16/z_index = 0
+17/name = "pipe_sprites.png 17"
+17/texture = ExtResource( 2 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 48, 80, 16, 16 )
+17/tile_mode = 0
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape = SubResource( 9 )
+17/shape_one_way = false
+17/shape_one_way_margin = 1.0
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+17/z_index = 0
+18/name = "pipe_sprites.png 18"
+18/texture = ExtResource( 2 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 64, 80, 16, 16 )
+18/tile_mode = 0
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shape_offset = Vector2( 0, 0 )
+18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape = SubResource( 10 )
+18/shape_one_way = false
+18/shape_one_way_margin = 1.0
+18/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+18/z_index = 0
+19/name = "pipe_sprites.png 19"
+19/texture = ExtResource( 2 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 80, 80, 16, 16 )
+19/tile_mode = 0
+19/occluder_offset = Vector2( 0, 0 )
+19/navigation_offset = Vector2( 0, 0 )
+19/shape_offset = Vector2( 0, 0 )
+19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+19/shape = SubResource( 11 )
+19/shape_one_way = false
+19/shape_one_way_margin = 1.0
+19/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+19/z_index = 0
+20/name = "pipe_sprites.png 20"
+20/texture = ExtResource( 2 )
+20/tex_offset = Vector2( 0, 0 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 96, 80, 16, 16 )
+20/tile_mode = 0
+20/occluder_offset = Vector2( 0, 0 )
+20/navigation_offset = Vector2( 0, 0 )
+20/shape_offset = Vector2( 0, 0 )
+20/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+20/shape = SubResource( 13 )
+20/shape_one_way = false
+20/shape_one_way_margin = 1.0
+20/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+20/z_index = 0
+21/name = "pipe_sprites.png 21"
+21/texture = ExtResource( 2 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 112, 80, 16, 16 )
+21/tile_mode = 0
+21/occluder_offset = Vector2( 0, 0 )
+21/navigation_offset = Vector2( 0, 0 )
+21/shape_offset = Vector2( 0, 0 )
+21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+21/shape = SubResource( 14 )
+21/shape_one_way = false
+21/shape_one_way_margin = 1.0
+21/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+21/z_index = 0
+22/name = "pipe_sprites.png 22"
+22/texture = ExtResource( 2 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 128, 80, 16, 16 )
+22/tile_mode = 0
+22/occluder_offset = Vector2( 0, 0 )
+22/navigation_offset = Vector2( 0, 0 )
+22/shape_offset = Vector2( 0, 0 )
+22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+22/shape = SubResource( 15 )
+22/shape_one_way = false
+22/shape_one_way_margin = 1.0
+22/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+22/z_index = 0
+23/name = "pipe_sprites.png 23"
+23/texture = ExtResource( 2 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 160, 160, 16, 32 )
+23/tile_mode = 0
+23/occluder_offset = Vector2( 0, 0 )
+23/navigation_offset = Vector2( 0, 0 )
+23/shape_offset = Vector2( 0, 0 )
+23/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+23/shape_one_way = false
+23/shape_one_way_margin = 0.0
+23/shapes = [  ]
+23/z_index = 0
+24/name = "pipe_sprites.png 24"
+24/texture = ExtResource( 2 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 208, 192, 16, 32 )
+24/tile_mode = 0
+24/occluder_offset = Vector2( 0, 0 )
+24/navigation_offset = Vector2( 0, 0 )
+24/shape_offset = Vector2( 0, 0 )
+24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+24/shape_one_way = false
+24/shape_one_way_margin = 0.0
+24/shapes = [  ]
+24/z_index = 0
+25/name = "pipe_sprites.png 25"
+25/texture = ExtResource( 2 )
+25/tex_offset = Vector2( 0, 0 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 192, 160, 16, 32 )
+25/tile_mode = 0
+25/occluder_offset = Vector2( 0, 0 )
+25/navigation_offset = Vector2( 0, 0 )
+25/shape_offset = Vector2( 0, 0 )
+25/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+25/shape_one_way = false
+25/shape_one_way_margin = 0.0
+25/shapes = [  ]
+25/z_index = 0
+26/name = "pipe_sprites.png 26"
+26/texture = ExtResource( 2 )
+26/tex_offset = Vector2( 0, 0 )
+26/modulate = Color( 1, 1, 1, 1 )
+26/region = Rect2( 128, 112, 32, 32 )
+26/tile_mode = 0
+26/occluder_offset = Vector2( 0, 0 )
+26/navigation_offset = Vector2( 0, 0 )
+26/shape_offset = Vector2( 0, 0 )
+26/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+26/shape = SubResource( 67 )
+26/shape_one_way = false
+26/shape_one_way_margin = 1.0
+26/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 67 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+26/z_index = 0
+
+[sub_resource type="Shader" id=48]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform vec2 offset = vec2(8.0, 8.0);
+uniform vec4 modulate : hint_color;
+
+void fragment() {
+	vec2 ps = TEXTURE_PIXEL_SIZE;
+
+	vec4 shadow = vec4(modulate.rgb, texture(TEXTURE, UV - offset * ps).a * modulate.a);
+	vec4 col = texture(TEXTURE, UV);
+
+	COLOR = mix(shadow, col, col.a);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=65]
+shader = SubResource( 48 )
+shader_param/offset = Vector2( -2, 0 )
+shader_param/modulate = null
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 17 )
+region = Rect2( 288, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 17 )
+region = Rect2( 320, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 17 )
+region = Rect2( 352, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 17 )
+region = Rect2( 384, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 17 )
+region = Rect2( 416, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 17 )
+region = Rect2( 448, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 17 )
+region = Rect2( 480, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 17 )
+region = Rect2( 512, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 17 )
+region = Rect2( 544, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 17 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 17 )
+region = Rect2( 576, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 17 )
+region = Rect2( 608, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 17 )
+region = Rect2( 640, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 17 )
+region = Rect2( 672, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 17 )
+region = Rect2( 704, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 17 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 17 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 17 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 17 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 17 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 17 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 17 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 17 )
+region = Rect2( 256, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=66]
+animations = [ {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"loop": false,
+"name": "attack",
+"speed": 35.0
+}, {
+"frames": [ SubResource( 41 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "walk",
+"speed": 20.0
+} ]
+
+[sub_resource type="Shader" id=55]
+code = "shader_type canvas_item;
+
+uniform vec2 resolution;
+
+
+void fragment() {
+	vec2 pixelSize = 1.0 / resolution;
+	vec2 pixelCoords = floor(UV / pixelSize) * pixelSize;
+	
+	float amplitude = 0.2;
+	float frequency = 10.0;
+	float speed = 0.3;
+	vec2 uv = UV;
+	float distortion = sin(pixelCoords.y * frequency + TIME * speed) * amplitude;
+	uv.x += distortion;
+	vec4 color = texture(TEXTURE, uv);
+	COLOR =color;
+
+}"
+
+[sub_resource type="ShaderMaterial" id=56]
+shader = SubResource( 55 )
+shader_param/resolution = Vector2( 48, 16 )
+
+[sub_resource type="Shader" id=53]
+code = "shader_type canvas_item;
+
+uniform vec2 resolution;
+
+
+void fragment() {
+	vec2 pixelSize = 1.0 / resolution;
+	vec2 pixelCoords = floor(UV / pixelSize) * pixelSize;
+	
+	float amplitude = 0.2;
+	float frequency = 10.0;
+	float speed = 1.0;
+	vec2 uv = UV;
+	float distortion = sin(pixelCoords.y * frequency + TIME * speed) * amplitude;
+	uv.x += distortion;
+	vec4 color = texture(TEXTURE, uv);
+	COLOR =color;
+
+}"
+
+[sub_resource type="ShaderMaterial" id=54]
+shader = SubResource( 53 )
+shader_param/resolution = Vector2( 48, 16 )
+
+[sub_resource type="Shader" id=57]
+code = "shader_type canvas_item;
+
+uniform vec2 resolution;
+
+
+void fragment() {
+	vec2 pixelSize = 1.0 / resolution;
+	vec2 pixelCoords = floor(UV / pixelSize) * pixelSize;
+	
+	float amplitude = 0.2;
+	float frequency = 10.0;
+	float speed = 0.8;
+	vec2 uv = UV;
+	float distortion = sin(pixelCoords.y * frequency + TIME * speed) * amplitude;
+	uv.x += distortion;
+	vec4 color = texture(TEXTURE, uv);
+	COLOR =color;
+
+}"
+
+[sub_resource type="ShaderMaterial" id=58]
+shader = SubResource( 57 )
+shader_param/resolution = Vector2( 48, 16 )
+
+[sub_resource type="Shader" id=59]
+code = "shader_type canvas_item;
+
+uniform vec2 resolution;
+
+
+void fragment() {
+	vec2 pixelSize = 1.0 / resolution;
+	vec2 pixelCoords = floor(UV / pixelSize) * pixelSize;
+	
+	float amplitude = 0.2;
+	float frequency = 10.0;
+	float speed = 0.5;
+	vec2 uv = UV;
+	float distortion = sin(pixelCoords.y * frequency + TIME * speed) * amplitude;
+	uv.x += distortion;
+	vec4 color = texture(TEXTURE, uv);
+	COLOR =color;
+
+}"
+
+[sub_resource type="ShaderMaterial" id=60]
+shader = SubResource( 59 )
+shader_param/resolution = Vector2( 48, 16 )
+
+[sub_resource type="Shader" id=61]
+code = "shader_type canvas_item;
+
+uniform vec2 resolution;
+
+
+void fragment() {
+	vec2 pixelSize = 1.0 / resolution;
+	vec2 pixelCoords = floor(UV / pixelSize) * pixelSize;
+	
+	float amplitude = 0.2;
+	float frequency = 10.0;
+	float speed = 1.3;
+	vec2 uv = UV;
+	float distortion = sin(pixelCoords.y * frequency + TIME * speed) * amplitude;
+	uv.x += distortion;
+	vec4 color = texture(TEXTURE, uv);
+	COLOR =color;
+
+}"
+
+[sub_resource type="ShaderMaterial" id=62]
+shader = SubResource( 61 )
+shader_param/resolution = Vector2( 48, 16 )
+
+[sub_resource type="Shader" id=63]
+code = "shader_type canvas_item;
+
+uniform vec2 resolution;
+uniform float scrollSpeed;
+uniform float maxY;
+ 
+void fragment() {
+	vec2 pixelSize = 1.0 / resolution;
+	vec2 pixelCoords = floor(UV / pixelSize) * pixelSize;
+	vec2 uv =UV;
+	uv.y= 1.0-uv.y;
+	float displacement = TIME * scrollSpeed;
+	float distortion = pixelCoords.x + displacement;
+	
+	uv.y-=distortion;
+	float alpha = 1.0;
+	if (pixelCoords.y < 0.0 || pixelCoords.y < 1.0- maxY) {
+    alpha = 0.0;
+	}
+
+	vec4 color = texture(TEXTURE, uv);
+	COLOR =vec4(color.rgb,color.a*alpha);
+//	COLOR =vec4(uv.y,uv.y,uv.y,1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id=64]
+shader = SubResource( 63 )
+shader_param/resolution = Vector2( 48, 16 )
+shader_param/scrollSpeed = 0.08
+shader_param/maxY = 0.8
+
+[sub_resource type="RectangleShape2D" id=68]
+extents = Vector2( 2.5, 2.5 )
+
+[sub_resource type="RectangleShape2D" id=69]
+extents = Vector2( 2.47034, 2.53199 )
+
+[node name="world" type="Node2D"]
+position = Vector2( -0.432381, -3 )
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -501.0
+margin_top = -142.0
+margin_right = 521.0
+margin_bottom = 459.0
+rect_scale = Vector2( 2.07354, 3.5868 )
+color = Color( 0.182773, 0.1288, 0.23, 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = SubResource( 23 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1638415, 1, 0, 1638416, 3, 0, 1638417, 4, 0, 1638418, 6, 0, 1638419, 2, 0, 1638423, 3, 0, 1638424, 4, 0, 1638425, 5, 0, 1638426, 6, 0, 1638431, 3, 0, 1638432, 5, 0, 1638433, 4, 0, 1638434, 5, 0, 1638435, 6, 0, 1638438, 3, 0, 1638439, 6, 0, 1638444, 3, 0, 1638445, 6, 0, 1638449, 3, 0, 1638450, 6, 0, 1638452, 4, 0, 1638455, 4, 0, 1638459, 4, 0, 1638464, 4, 0, 1638470, 4, 0, 1835032, 1, 0, 1835033, 3, 0, 1835034, 5, 0, 1835035, 5, 0, 1835036, 5, 0, 1835037, 5, 0, 1835038, 5, 0, 1835039, 6, 0, 1835040, 2, 0, 1966084, 3, 0, 1966085, 4, 0, 1966086, 5, 0, 1966087, 4, 0, 1966088, 5, 0, 1966089, 6, 0, 1966090, 2, 0, 1966094, 3, 0, 1966095, 4, 0, 1966096, 4, 0, 1966097, 4, 0, 1966098, 4, 0, 1966099, 7, 0, 1966100, 8, 0, 1966101, 9, 0, 1966102, 10, 0, 1966103, 11, 0, 1966104, 12, 0, 1966105, 11, 0, 1966106, 12, 0, 1966107, 11, 0, 1966108, 12, 0, 1966109, 11, 0, 1966110, 12, 0, 1966111, 13, 0, 1966112, 14, 0, 1966114, 7, 0, 1966115, 8, 0, 1966116, 9, 0, 1966117, 10, 0, 1966118, 11, 0, 1966119, 12, 0, 1966120, 11, 0, 1966121, 12, 0, 1966122, 11, 0, 1966123, 12, 0, 1966124, 11, 0, 1966125, 12, 0, 1966126, 13, 0, 1966127, 14, 0, 1966129, 7, 0, 1966130, 8, 0, 1966131, 9, 0, 1966132, 10, 0, 1966133, 11, 0, 1966134, 12, 0, 1966135, 11, 0, 1966136, 12, 0, 1966137, 11, 0, 1966138, 12, 0, 1966139, 11, 0, 1966140, 12, 0, 1966141, 13, 0, 1966142, 14, 0, 2097149, 24, 0, 2097150, 24, 0, 2097151, 26, 0, 2031626, 24, 0, 2031627, 26, 0, 2031635, 15, 0, 2031636, 16, 0, 2031637, 17, 0, 2031638, 18, 0, 2031639, 19, 0, 2031640, 20, 0, 2031641, 19, 0, 2031642, 20, 0, 2031643, 19, 0, 2031644, 20, 0, 2031645, 19, 0, 2031646, 20, 0, 2031647, 21, 0, 2031648, 22, 0, 2031650, 15, 0, 2031651, 16, 0, 2031652, 17, 0, 2031653, 18, 0, 2031654, 19, 0, 2031655, 20, 0, 2031656, 19, 0, 2031657, 20, 0, 2031658, 19, 0, 2031659, 20, 0, 2031660, 19, 0, 2031661, 20, 0, 2031662, 21, 0, 2031663, 22, 0, 2031665, 15, 0, 2031666, 16, 0, 2031667, 17, 0, 2031668, 18, 0, 2031669, 19, 0, 2031670, 20, 0, 2031671, 19, 0, 2031672, 20, 0, 2031673, 19, 0, 2031674, 20, 0, 2031675, 19, 0, 2031676, 20, 0, 2031677, 21, 0, 2031678, 22, 0, 2228211, 0, 0, 2228212, 3, 0, 2228213, 4, 0, 2228214, 4, 0, 2228215, 4, 0, 2228216, 4, 0, 2228217, 4, 0, 2228218, 4, 0, 2228219, 4, 0, 2228220, 4, 0, 2228221, 4, 0, 2228222, 4, 0, 2228223, 4, 0, 2162688, 4, 0, 2162689, 4, 0, 2162690, 4, 0, 2162691, 4, 0, 2162692, 4, 0, 2162693, 4, 0, 2162694, 4, 0, 2162695, 4, 0, 2162696, 4, 0, 2162697, 4, 0, 2162698, 4, 0, 2162699, 4, 0, 2162700, 4, 0, 2162701, 4, 0, 2162702, 4, 0, 2162703, 4, 0, 2162704, 4, 0, 2162705, 4, 0, 2162706, 4, 0, 2162707, 4, 0, 2162708, 4, 0, 2162709, 4, 0, 2162710, 4, 0, 2162711, 4, 0, 2162712, 4, 0, 2162713, 4, 0, 2162714, 4, 0, 2162715, 4, 0, 2162716, 4, 0, 2162717, 4, 0, 2162718, 4, 0, 2162719, 4, 0, 2162720, 4, 0, 2162721, 4, 0, 2162722, 4, 0, 2162723, 4, 0, 2162724, 4, 0, 2162725, 4, 0, 2162726, 4, 0, 2162727, 4, 0, 2162728, 4, 0, 2162729, 4, 0, 2162730, 4, 0, 2162731, 4, 0, 2162732, 4, 0, 2162733, 4, 0, 2162734, 4, 0, 2162735, 4, 0, 2162736, 4, 0, 2162737, 4, 0, 2162738, 5, 0, 2162739, 4, 0, 2162740, 4, 0, 2162741, 4, 0, 2162742, 4, 0, 2162743, 4, 0, 2162744, 4, 0, 2162745, 4, 0, 2162746, 4, 0, 2162747, 4, 0, 2162748, 4, 0, 2162749, 4, 0, 2162750, 4, 0, 2162751, 4, 0, 2162752, 4, 0, 2162753, 4, 0, 2162754, 4, 0, 2162755, 4, 0, 2162756, 5, 0, 2162757, 6, 0, 2162758, 2, 0, 3997688, 1, 0, 3997689, 3, 0, 3997690, 5, 0, 3997691, 5, 0, 3997692, 5, 0, 3997693, 5, 0, 3997694, 5, 0, 3997695, 5, 0, 3932160, 5, 0, 3932161, 5, 0, 3932162, 5, 0, 3932163, 5, 0, 3932164, 4, 0, 3932165, 4, 0, 3932166, 4, 0, 3932167, 4, 0, 3932168, 4, 0, 3932169, 4, 0, 3932170, 4, 0, 3932171, 4, 0, 3932172, 4, 0, 3932173, 4, 0, 3932174, 4, 0, 3932175, 4, 0, 3932176, 4, 0, 3932177, 4, 0, 3932178, 4, 0, 3932179, 4, 0, 3932180, 4, 0, 3932181, 4, 0, 3932182, 5, 0, 3932183, 4, 0, 3932184, 4, 0, 3932185, 4, 0, 3932186, 4, 0, 3932187, 4, 0, 3932188, 4, 0, 3932189, 4, 0, 3932190, 4, 0, 3932191, 4, 0, 3932192, 4, 0, 3932193, 4, 0, 3932194, 4, 0, 3932195, 4, 0, 3932196, 4, 0, 3932197, 4, 0, 3932198, 4, 0, 3932199, 4, 0, 3932200, 4, 0, 3932201, 6, 0, 3932202, 4, 0, 3932203, 4, 0, 3932204, 4, 0, 3932205, 4, 0, 3932206, 4, 0, 3932207, 4, 0, 3932208, 4, 0, 3932209, 4, 0, 3932210, 4, 0, 3932211, 4, 0, 3932212, 4, 0, 3932213, 4, 0, 3932214, 4, 0, 3932215, 4, 0, 3932216, 4, 0, 3932217, 4, 0, 3932218, 4, 0, 3932219, 4, 0, 3932220, 4, 0, 3932221, 4, 0, 3932222, 4, 0, 3932223, 4, 0, 3932224, 4, 0, 3932225, 4, 0, 3932226, 4, 0, 3932227, 4, 0, 3932228, 4, 0, 3932229, 6, 0, 3932230, 2, 0 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 95.7433, 464.257 )
+collision_layer = 4
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2( -2, 42 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.4
+drag_margin_top = 0.4
+drag_margin_right = 0.4
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="stateNameDisplay" type="Label" parent="player"]
+margin_right = 40.0
+margin_bottom = 14.0
+script = ExtResource( 5 )
+
+[node name="AnimationPlayer2" type="AnimatedSprite" parent="player"]
+visible = false
+material = SubResource( 65 )
+frames = SubResource( 66 )
+animation = "idle"
+playing = true
+
+[node name="toxicSludge" type="Node2D" parent="."]
+position = Vector2( 40, 521 )
+
+[node name="tank" type="Sprite" parent="toxicSludge"]
+texture = ExtResource( 6 )
+
+[node name="bubbleBg" type="Sprite" parent="toxicSludge"]
+material = SubResource( 56 )
+texture = ExtResource( 7 )
+
+[node name="bubble1" type="Sprite" parent="toxicSludge"]
+material = SubResource( 54 )
+texture = ExtResource( 8 )
+
+[node name="bubble2" type="Sprite" parent="toxicSludge"]
+material = SubResource( 58 )
+texture = ExtResource( 9 )
+
+[node name="bubble3" type="Sprite" parent="toxicSludge"]
+material = SubResource( 60 )
+texture = ExtResource( 10 )
+
+[node name="bubble4" type="Sprite" parent="toxicSludge"]
+material = SubResource( 62 )
+texture = ExtResource( 11 )
+
+[node name="bubble5" type="Sprite" parent="toxicSludge"]
+material = SubResource( 64 )
+texture = ExtResource( 12 )
+
+[node name="toxicSludge2" type="Node2D" parent="."]
+position = Vector2( 50, 521 )
+
+[node name="tank" type="Sprite" parent="toxicSludge2"]
+texture = ExtResource( 6 )
+
+[node name="bubbleBg" type="Sprite" parent="toxicSludge2"]
+material = SubResource( 56 )
+texture = ExtResource( 7 )
+
+[node name="bubble1" type="Sprite" parent="toxicSludge2"]
+material = SubResource( 54 )
+texture = ExtResource( 8 )
+
+[node name="bubble2" type="Sprite" parent="toxicSludge2"]
+material = SubResource( 58 )
+texture = ExtResource( 9 )
+
+[node name="bubble3" type="Sprite" parent="toxicSludge2"]
+material = SubResource( 60 )
+texture = ExtResource( 10 )
+
+[node name="bubble4" type="Sprite" parent="toxicSludge2"]
+material = SubResource( 62 )
+texture = ExtResource( 11 )
+
+[node name="bubble5" type="Sprite" parent="toxicSludge2"]
+material = SubResource( 64 )
+texture = ExtResource( 12 )
+
+[node name="toxicSludge3" type="Node2D" parent="."]
+position = Vector2( 100, 521 )
+
+[node name="tank" type="Sprite" parent="toxicSludge3"]
+texture = ExtResource( 6 )
+
+[node name="bubbleBg" type="Sprite" parent="toxicSludge3"]
+material = SubResource( 56 )
+texture = ExtResource( 7 )
+
+[node name="bubble1" type="Sprite" parent="toxicSludge3"]
+material = SubResource( 54 )
+texture = ExtResource( 8 )
+
+[node name="bubble2" type="Sprite" parent="toxicSludge3"]
+material = SubResource( 58 )
+texture = ExtResource( 9 )
+
+[node name="bubble3" type="Sprite" parent="toxicSludge3"]
+material = SubResource( 60 )
+texture = ExtResource( 10 )
+
+[node name="bubble4" type="Sprite" parent="toxicSludge3"]
+material = SubResource( 62 )
+texture = ExtResource( 11 )
+
+[node name="bubble5" type="Sprite" parent="toxicSludge3"]
+material = SubResource( 64 )
+texture = ExtResource( 12 )
+
+[node name="toxicSludge4" type="Node2D" parent="."]
+position = Vector2( 150, 521 )
+
+[node name="tank" type="Sprite" parent="toxicSludge4"]
+texture = ExtResource( 6 )
+
+[node name="bubbleBg" type="Sprite" parent="toxicSludge4"]
+material = SubResource( 56 )
+texture = ExtResource( 7 )
+
+[node name="bubble1" type="Sprite" parent="toxicSludge4"]
+material = SubResource( 54 )
+texture = ExtResource( 8 )
+
+[node name="bubble2" type="Sprite" parent="toxicSludge4"]
+material = SubResource( 58 )
+texture = ExtResource( 9 )
+
+[node name="bubble3" type="Sprite" parent="toxicSludge4"]
+material = SubResource( 60 )
+texture = ExtResource( 10 )
+
+[node name="bubble4" type="Sprite" parent="toxicSludge4"]
+material = SubResource( 62 )
+texture = ExtResource( 11 )
+
+[node name="bubble5" type="Sprite" parent="toxicSludge4"]
+material = SubResource( 64 )
+texture = ExtResource( 12 )
+
+[node name="slime1" parent="." instance=ExtResource( 3 )]
+
+[node name="estimateHighJump" type="Node2D" parent="."]
+position = Vector2( 328, 464 )
+
+[node name="Sprite" type="Sprite" parent="estimateHighJump"]
+texture = ExtResource( 17 )
+hframes = 26
+
+[node name="Sprite2" type="Sprite" parent="estimateHighJump"]
+position = Vector2( 0, -29 )
+texture = ExtResource( 17 )
+hframes = 26
+
+[node name="estimateLongJump" type="Node2D" parent="."]
+visible = false
+position = Vector2( 209, 449 )
+
+[node name="Sprite" type="Sprite" parent="estimateLongJump"]
+position = Vector2( -14, 5 )
+texture = ExtResource( 17 )
+hframes = 27
+
+[node name="Sprite2" type="Sprite" parent="estimateLongJump"]
+position = Vector2( -49, 16 )
+texture = ExtResource( 17 )
+hframes = 27
+
+[node name="Sprite3" type="Sprite" parent="estimateLongJump"]
+position = Vector2( 19, 16 )
+texture = ExtResource( 17 )
+hframes = 27
+
+[node name="playerPosition" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="playerPosition"]
+position = Vector2( 94, 467 )
+
+[node name="testingJump" type="Node2D" parent="."]
+position = Vector2( 50.1562, 477.694 )
+
+[node name="jumper" type="Node2D" parent="testingJump"]
+
+[node name="jumperBody" type="KinematicBody2D" parent="testingJump/jumper"]
+collision_layer = 4
+script = ExtResource( 14 )
+
+[node name="jumper" type="Sprite" parent="testingJump/jumper/jumperBody"]
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testingJump/jumper/jumperBody"]
+shape = SubResource( 68 )
+
+[node name="floorCheck" type="RayCast2D" parent="testingJump/jumper/jumperBody"]
+enabled = true
+cast_to = Vector2( 0, 5 )
+
+[node name="jumpHeight" type="Line2D" parent="testingJump/jumper"]
+script = ExtResource( 15 )
+x_offset = 0.0
+
+[node name="halfJumper" type="Node2D" parent="testingJump"]
+position = Vector2( 10.0103, 0.27179 )
+
+[node name="jumperBody" type="KinematicBody2D" parent="testingJump/halfJumper"]
+collision_layer = 4
+script = ExtResource( 21 )
+
+[node name="jumper" type="Sprite" parent="testingJump/halfJumper/jumperBody"]
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testingJump/halfJumper/jumperBody"]
+shape = SubResource( 68 )
+
+[node name="floorCheck" type="RayCast2D" parent="testingJump/halfJumper/jumperBody"]
+enabled = true
+cast_to = Vector2( 0, 5 )
+
+[node name="jumpHeight" type="Line2D" parent="testingJump/halfJumper"]
+script = ExtResource( 22 )
+
+[node name="leaper" type="Node2D" parent="testingJump"]
+
+[node name="leaperBody" type="KinematicBody2D" parent="testingJump/leaper"]
+position = Vector2( 22.8189, -0.148834 )
+collision_layer = 0
+script = ExtResource( 16 )
+
+[node name="Sprite" type="Sprite" parent="testingJump/leaper/leaperBody"]
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testingJump/leaper/leaperBody"]
+position = Vector2( 0.0115967, 0.00741577 )
+shape = SubResource( 69 )
+
+[node name="jumpDistance" type="Line2D" parent="testingJump/leaper"]
+script = ExtResource( 18 )
+
+[node name="halfJumpLeaper" type="Node2D" parent="testingJump"]
+position = Vector2( 63.2725, 0.490295 )
+
+[node name="leaperBody" type="KinematicBody2D" parent="testingJump/halfJumpLeaper"]
+position = Vector2( 22.8189, -0.148834 )
+collision_layer = 0
+script = ExtResource( 19 )
+
+[node name="Sprite" type="Sprite" parent="testingJump/halfJumpLeaper/leaperBody"]
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testingJump/halfJumpLeaper/leaperBody"]
+position = Vector2( 0.0115967, 0.00741577 )
+shape = SubResource( 69 )
+
+[node name="jumpDistance" type="Line2D" parent="testingJump/halfJumpLeaper"]
+script = ExtResource( 20 )
+
+[node name="halfLeaper" parent="testingJump" instance=ExtResource( 23 )]

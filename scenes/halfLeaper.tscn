@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/tests/HalfLeaperjumpDistance.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprite.png" type="Texture" id=2]
+[ext_resource path="res://scripts/tests/halfJumpLeaperBody.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=69]
+extents = Vector2( 2.47034, 2.53199 )
+
+[node name="halfLeaper" type="Node2D"]
+position = Vector2( -65.8758, 0.712708 )
+
+[node name="leaperBody" type="KinematicBody2D" parent="."]
+position = Vector2( 22.8189, -0.148834 )
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="leaperBody"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leaperBody"]
+position = Vector2( 0.0115967, 0.00741577 )
+shape = SubResource( 69 )
+
+[node name="jumpDistance" type="Line2D" parent="."]
+script = ExtResource( 1 )

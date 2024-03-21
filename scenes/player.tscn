@@ -1,0 +1,245 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://assets/pipemanAnimatedt.png" type="Texture" id=1]
+[ext_resource path="res://scripts/world/stateNameDisplay.gd" type="Script" id=2]
+[ext_resource path="res://scripts/playerScripts/stateMachine/states/attack.gd" type="Script" id=3]
+[ext_resource path="res://scripts/playerScripts/stateMachine/states/idle.gd" type="Script" id=4]
+[ext_resource path="res://scripts/playerScripts/stateMachine/states/jump.gd" type="Script" id=5]
+[ext_resource path="res://scripts/playerScripts/stateMachine/states/move.gd" type="Script" id=6]
+[ext_resource path="res://scripts/playerScripts/stateMachine/playerStateMachine.gd" type="Script" id=7]
+[ext_resource path="res://scripts/playerScripts/playerDebug.gd" type="Script" id=8]
+
+[sub_resource type="Shader" id=52]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform vec2 offset = vec2(8.0, 8.0);
+uniform vec4 modulate : hint_color;
+
+void fragment() {
+	vec2 ps = TEXTURE_PIXEL_SIZE;
+
+	vec4 shadow = vec4(modulate.rgb, texture(TEXTURE, UV - offset * ps).a * modulate.a);
+	vec4 col = texture(TEXTURE, UV);
+
+	COLOR = mix(shadow, col, col.a);
+}
+"
+
+[sub_resource type="ShaderMaterial" id=49]
+shader = SubResource( 52 )
+shader_param/offset = Vector2( -2, 0 )
+shader_param/modulate = null
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 1 )
+region = Rect2( 288, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 1 )
+region = Rect2( 320, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 1 )
+region = Rect2( 352, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 1 )
+region = Rect2( 384, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 1 )
+region = Rect2( 416, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 1 )
+region = Rect2( 448, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 1 )
+region = Rect2( 480, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 512, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 1 )
+region = Rect2( 544, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 1 )
+region = Rect2( 576, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 1 )
+region = Rect2( 608, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 1 )
+region = Rect2( 640, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 1 )
+region = Rect2( 672, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 1 )
+region = Rect2( 704, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 1 )
+region = Rect2( 224, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 1 )
+region = Rect2( 256, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=47]
+animations = [ {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
+"loop": false,
+"name": "attack",
+"speed": 35.0
+}, {
+"frames": [ SubResource( 41 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "walk",
+"speed": 20.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=51]
+extents = Vector2( 6.5, 14.5 )
+
+[node name="player" type="KinematicBody2D"]
+position = Vector2( 82, 513 )
+script = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimatedSprite" parent="."]
+material = SubResource( 49 )
+frames = SubResource( 47 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.5, 1.5 )
+shape = SubResource( 51 )
+
+[node name="stateMachine" type="Node" parent="."]
+script = ExtResource( 7 )
+start_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="stateMachine"]
+script = ExtResource( 4 )
+
+[node name="move" type="Node" parent="stateMachine"]
+script = ExtResource( 6 )
+
+[node name="jump" type="Node" parent="stateMachine"]
+script = ExtResource( 5 )
+
+[node name="attack" type="Node" parent="stateMachine"]
+script = ExtResource( 3 )
+
+[node name="stateDisplay" type="Label" parent="."]
+margin_left = -68.0
+margin_top = -62.0
+margin_right = 7.0
+margin_bottom = -48.0
+rect_scale = Vector2( 0.338504, 0.548797 )
+text = "player state"
+script = ExtResource( 2 )
+
+[node name="playerHeight" type="Line2D" parent="."]
+position = Vector2( -1, 0 )
+points = PoolVector2Array( -16, 16, -16, -13 )
+width = 1.0
+
+[node name="horizontalSpeed" type="Label" parent="."]
+margin_left = -68.0
+margin_top = -53.0
+margin_right = 41.0
+margin_bottom = -39.0
+rect_scale = Vector2( 0.240002, 0.56 )
+text = "Horixontal speed"
+
+[node name="verticalSpeed" type="Label" parent="."]
+margin_left = -69.0
+margin_top = -42.0
+margin_right = 21.0
+margin_bottom = -28.0
+rect_scale = Vector2( 0.368513, 0.601813 )
+text = "vertical speed"
+
+[node name="startJump" type="Label" parent="."]
+margin_left = -67.0
+margin_top = -31.0
+margin_right = 7.0
+margin_bottom = -17.0
+rect_scale = Vector2( 0.249708, 0.521913 )
+text = "start jump: "
+
+[node name="floorDetector" type="Node2D" parent="."]
+position = Vector2( 0, -2 )
+
+[node name="floorDetect" type="RayCast2D" parent="floorDetector"]
+position = Vector2( -7, 1 )
+enabled = true
+cast_to = Vector2( 0, 18 )
+
+[node name="floorDetect2" type="RayCast2D" parent="floorDetector"]
+position = Vector2( -2, 1 )
+enabled = true
+cast_to = Vector2( 0, 18 )
+
+[node name="floorDetect3" type="RayCast2D" parent="floorDetector"]
+position = Vector2( 2, 1 )
+enabled = true
+cast_to = Vector2( 0, 18 )
+
+[node name="ceilingDetector" type="Node2D" parent="."]
+
+[node name="detectCeiling" type="RayCast2D" parent="ceilingDetector"]
+rotation = -3.1765
+enabled = true
+cast_to = Vector2( -1, 25 )
+
+[connection signal="state_changed" from="stateMachine" to="stateDisplay" method="_on_stateMachine_state_changed"]
